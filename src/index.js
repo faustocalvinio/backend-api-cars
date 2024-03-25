@@ -18,8 +18,26 @@ app.use(cors());
 
 app.use(express.json());
 
-// app.use("/api/auth", require("./routes/auth.routes.js"));
+app.use("/api/auth", require("./routes/auth.routes.js"));
 // app.use("/api/cars", require("./routes/cars.auth.routes.js"));
+app.get("/test", (req, res) => {
+   // Obtener la hora actual
+   let ahora = new Date();
+
+   let horas = ahora.getHours();
+   let minutos = ahora.getMinutes();
+   let segundos = ahora.getSeconds();
+
+   minutos = minutos < 10 ? "0" + minutos : minutos;
+   segundos = segundos < 10 ? "0" + segundos : segundos;
+
+   let horaFormateada = `${horas}:${minutos}:${segundos}`;
+
+   res.json({
+      ok: true,
+      msg: `Todo funciona bien a las ${horaFormateada}`,
+   });
+});
 
 app.get("*", (req, res) => {
    res.sendFile(__dirname + "/public/index.html");

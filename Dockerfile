@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
+# docker-compose up --build --force-recreate
+
 RUN npm install
 
 COPY . .
