@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin_password
+    volumes:
+      - mongodb_data:/data/db
+  expressjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: expressjs
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:  
+      ENV_JWT_SECRET_PRIVATE_KEY: ${ENV_JWT_SECRET_PRIVATE_KEY}
+      ENV_MONGODB_CONNECTION_STRING: ${ENV_MONGODB_CONNECTION_STRING}
+      ENV_PORT: ${ENV_PORT}
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_data:
