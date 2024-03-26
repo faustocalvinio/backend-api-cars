@@ -5,6 +5,7 @@ const cors = require("cors");
 const { dbConnection } = require("./database/db-config");
 
 const dotenv = require("dotenv");
+const { seedCars } = require("./controllers/cars/seed.cars.controllers.js");
 
 dotenv.config();
 
@@ -19,7 +20,10 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", require("./routes/auth.routes.js"));
-// app.use("/api/cars", require("./routes/cars.auth.routes.js"));
+app.use("/api/cars", require("./routes/cars.routes.js"));
+
+// app.get("/api/seed", async () => await seedCars());
+
 app.get("/test", (req, res) => {
    // Obtener la hora actual
    let ahora = new Date();

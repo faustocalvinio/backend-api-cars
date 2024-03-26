@@ -13,6 +13,5 @@ const CarSchema = new Schema({
       type: String,
       required: true,
    },
-   
 });
 module.exports = model("Car", CarSchema);
