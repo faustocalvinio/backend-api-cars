@@ -1,15 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const { check } = require("express-validator");
-
-// !const { validateFields } = require("../middlewares/validate-fields");
-
 const { validateJWT } = require("../middlewares/jwt/validateJWT");
-
 const { createAdmin } = require("../controllers/admin/admin.controllers");
-const { validateFields } = require("../helpers/validateFields");
+const { validateFields } = require("../middlewares/auth/validateFields");
 
-validateJWT;
+
 
 router.post(
    "/new-admin",

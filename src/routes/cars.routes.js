@@ -5,4 +5,8 @@ const { seedCars, getAllCars } = require("../controllers/cars/seed.cars.controll
 
 router.post("/seed", [], seedCars);
 router.get("/all", [], getAllCars);
+// router.get("/:id", [], getCarById);
+// router.post("/create", [], addNewCar);
+// router.put("/update/:id", [], updateCar);
+
 module.exports = router;
