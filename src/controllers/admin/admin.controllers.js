@@ -1,6 +1,7 @@
 const { response } = require("express");
 const bcryptjs = require("bcryptjs");
 const Admin = require("../../models/Admin.model");
+const { generateJWT } = require("../../helpers/generateJWT");
 // !!!const { generateJWT } = require('../helpers/jwt');
 
 const createAdmin = async (req, res = response) => {
@@ -27,7 +28,7 @@ const createAdmin = async (req, res = response) => {
          ok: true,
          uid: admin.id,
          name: admin.name,
-        //  token,
+         //  token,
       });
    } catch (error) {
       console.log(error);
@@ -42,7 +43,7 @@ const loginUser = async (req, res = response) => {
    const { email, password } = req.body;
 
    try {
-      const user = await User.findOne({ email });
+      const user = await Admin.findOne({ email });
 
       if (!user) {
          return res.status(400).json({
