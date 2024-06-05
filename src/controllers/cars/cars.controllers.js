@@ -17,7 +17,7 @@ async function deleteCar(req, res) {
       carToRemove,
       resp,
    });
-}
+} 
 module.exports = {
    getAllCars,
    createCar,

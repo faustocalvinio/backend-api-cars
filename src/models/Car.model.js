@@ -16,10 +16,23 @@ const CarSchema = new Schema({
    price: {
       type: Number,
       required: false,
+      default: 1000,
    },
    isNew: {
       type: Boolean,
       default: false,
+   },
+   stock: {
+      type: Number,
+      default: 1,
+   },
+   image: {
+      type: String,
+      required: false,
+   },
+   sales: {
+      type: Number,
+      default: 0,
    },
 });
 module.exports = model("Car", CarSchema);

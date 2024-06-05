@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 const { check } = require("express-validator");
 const { validateJWT } = require("../middlewares/jwt/validateJWT");
+const { seedAdmins } = require("../helpers/seedAdmin");
 const {
    createAdmin,
    loginUser,
 } = require("../controllers/admin/admin.controllers");
 const { validateFields } = require("../middlewares/auth/validateFields");
-const { seedAdmins } = require("../helpers/seedAdmin");
 
 router.post("/seed-admins", [], seedAdmins);
 

@@ -8,8 +8,8 @@ const {
    createCar,
 } = require("../controllers/cars/cars.controllers");
 
-router.put("/add", [], createCar);
-router.get("/all", [], getAllCars);
 router.delete("/delete/:id", [], deleteCar);
+router.get("/all", [], getAllCars);
+router.put("/add", [], createCar);
 
 module.exports = router;
