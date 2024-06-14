@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const Admin = require("../models/Admin.model");
 
 const seedAdmins = async (req, res) => {
-   const admins = [
+   const adminsSeed = [
       {
          name: "Admin",
          email: "admin1@test.com",
@@ -16,7 +16,7 @@ const seedAdmins = async (req, res) => {
       },
    ];
    try {
-      await Admin.insertMany(admins);
+      await Admin.insertMany(adminsSeed);
       console.log("Seed Admins ejecutado");
       return res.json({
          ok: true,

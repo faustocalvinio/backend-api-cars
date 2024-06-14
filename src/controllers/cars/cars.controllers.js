@@ -17,9 +17,21 @@ async function deleteCar(req, res) {
       carToRemove,
       resp,
    });
-} 
+}
+
+async function updateCar(req, res) {
+   const carToUpdate = await Car.findById(req.params.id);
+   const resp = await Car.updateMany(carToUpdate, req.body);
+
+   return res.json({
+      carToUpdate,
+      resp,
+   });
+}
+
 module.exports = {
    getAllCars,
    createCar,
    deleteCar,
+   updateCar,
 };

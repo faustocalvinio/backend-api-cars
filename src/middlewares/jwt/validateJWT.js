@@ -15,23 +15,18 @@ const validateJWT = (req, res = response, next) => {
          process.env.ENV_JWT_SECRET_PRIVATE_KEY
       );
 
-      // if (req.uid === uid && req.name === name) {
-      //    console.log("must return true");
-      return res.json({
-         ok: true,
-         name,
-      });
-      // }
+      // return res.json({
+      //    ok: true,
+      //    name,
+      //    token,
+      // });
    } catch (error) {
       return res.status(401).json({
          ok: false,
          msg: "El token no es valido",
       });
    }
-
-   // !next();
+   next();
 };
 
-module.exports = {
-   validateJWT,
-};
+module.exports = { validateJWT };

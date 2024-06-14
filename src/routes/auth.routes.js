@@ -6,10 +6,11 @@ const { seedAdmins } = require("../helpers/seedAdmin");
 const {
    createAdmin,
    loginUser,
+   renewToken,
 } = require("../controllers/admin/admin.controllers");
 const { validateFields } = require("../middlewares/auth/validateFields");
 
-router.post("/seed-admins", [], seedAdmins);
+router.post("/seed", [], seedAdmins);
 
 router.post(
    "/new-admin",
@@ -25,7 +26,7 @@ router.post(
 );
 
 router.post(
-   "/",
+   "/login",
    [
       check("email", "El email es obligatorio").isEmail(),
       check("password", "El password debe ser de 6 caracteres").isLength({
@@ -36,6 +37,6 @@ router.post(
    loginUser
 );
 
-// router.get("/renew", validateJWT, renewToken);
+router.get("/renew", validateJWT, renewToken);
 
 module.exports = router;

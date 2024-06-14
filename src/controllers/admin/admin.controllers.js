@@ -60,7 +60,7 @@ const loginUser = async (req, res = response) => {
             msg: "El password es incorrecto",
          });
       }
-      // GENERAR TOKEN DE AUTH
+      // ?GENERAR TOKEN DE AUTH
       const token = await generateJWT(user.id, user.name);
 
       res.status(200).json({
