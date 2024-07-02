@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const { check } = require("express-validator");
 
 const {
    deleteCar,
@@ -18,6 +17,6 @@ router.delete("/delete/:id", validateJWT, deleteCar);
 router.put("/add", validateJWT, createCar);
 router.patch("/update/:id", validateJWT, updateCar);
 router.post("/seed", validateJWT, seedCars);
-router.post("/update/stock/:id",updateStock)
+router.post("/update/stock/:id", validateJWT, updateStock);
 
 module.exports = router;

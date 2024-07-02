@@ -1,12 +1,21 @@
 const Car = require("../../models/Car.model");
 
 async function getAllCars(req, res) {
-   const cars = await Car.find();
-   return res.json(cars);
+   try {
+      const cars = await Car.find();
+      return res.json(cars);
+   } catch (error) {
+      return res.json({ error });
+   }
 }
 async function createCar(req, res) {
-   const car = await Car.create(req.body);
-   return res.json(car);
+   try {
+      const car = await Car.create(req.body);
+      console.log(req.body)
+      return res.json(car);
+   } catch (error) {
+      return res.json({ error });
+   }
 }
 
 async function deleteCar(req, res) {
@@ -20,13 +29,34 @@ async function deleteCar(req, res) {
 }
 
 async function updateCar(req, res) {
-   const carToUpdate = await Car.findById(req.params.id);
-   const resp = await Car.updateMany(carToUpdate, req.body);
+   try {
+      console.log("Datos recibidos en req.body:", req.body);
+      
+      const carToUpdate = await Car.findById(req.params.id);
+      
+      if (!carToUpdate) {
+         return res.status(404).json({ message: 'Coche no encontrado' });
+      }
 
-   return res.json({
-      carToUpdate,
-      resp,
-   });
+      carToUpdate.lastUpdate = Date.now();
+
+      const updatedCar = await Car.findByIdAndUpdate(
+         req.params.id,
+         {
+            ...req.body,
+            lastUpdate: carToUpdate.lastUpdate
+         },
+         { new: true }
+      );
+
+      console.log("Coche actualizado:", updatedCar);
+
+      return res.json({
+         updatedCar
+      });
+   } catch (error) {
+      return res.status(500).json({ error });
+   }
 }
 
 async function updateStock(req, res) {
@@ -37,6 +67,7 @@ async function updateStock(req, res) {
       }
       const target = Number(req.query.amount);
       carToUpdate.stock = target;
+      carToUpdate.lastUpdate = Date.now()
       const updatedCar = await carToUpdate.save();
       return res.json({
          updatedCar,

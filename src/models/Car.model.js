@@ -34,5 +34,10 @@ const CarSchema = new Schema({
       type: Number,
       default: 0,
    },
+   lastUpdate: {
+      type: Date,
+      default: Date.now,
+      required: false,
+   },
 });
 module.exports = model("Car", CarSchema);
