@@ -5,7 +5,6 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 
 const { dbConnection } = require("./database/db-config");
-const { obtenerHora } = require("./helpers/obtenerHora.js");
 
 dotenv.config();
 dbConnection();
@@ -24,7 +23,7 @@ app.get("/", (req, res) => {
 app.get("/api/test", (req, res) => {
    res.json({
       ok: true,
-      msg: `La API funciona bien a las ${obtenerHora()}`,
+      msg: `La API funciona bien`,
    });
 });
 

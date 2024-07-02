@@ -14,12 +14,6 @@ const validateJWT = (req, res = response, next) => {
          token,
          process.env.ENV_JWT_SECRET_PRIVATE_KEY
       );
-
-      // return res.json({
-      //    ok: true,
-      //    name,
-      //    token,
-      // });
    } catch (error) {
       return res.status(401).json({
          ok: false,
