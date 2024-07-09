@@ -22,7 +22,7 @@ const carsDataSeed = [
       type: "BMW i",
       fuelType: "ELECTRICO",
       price: "115700",
-      isNew: true,
+
       stock: 5,
       image: "/ix.webp",
       sales: 33,
@@ -32,7 +32,7 @@ const carsDataSeed = [
       type: "BMW M",
       fuelType: "ELECTRICO",
       price: "186650",
-      isNew: true,
+
       stock: 10,
       image: "/ix.webp",
       sales: 33,
@@ -42,7 +42,7 @@ const carsDataSeed = [
       type: "BMW i",
       fuelType: "ELECTRICO",
       price: "79550",
-      isNew: true,
+
       stock: 50,
       image: "/ix.webp",
       sales: 33,
@@ -52,7 +52,7 @@ const carsDataSeed = [
       type: "BMW M",
       fuelType: "ELECTRICO",
       price: "117050",
-      isNew: true,
+
       stock: 22,
       image: "/ix.webp",
       sales: 33,
@@ -62,7 +62,7 @@ const carsDataSeed = [
       type: "BMW i",
       fuelType: "ELECTRICO",
       price: "76950",
-      isNew: true,
+
       stock: 8,
       image: "/ix.webp",
       sales: 33,
@@ -72,7 +72,7 @@ const carsDataSeed = [
       type: "BMW M",
       fuelType: "ELECTRICO",
       price: "114450",
-      isNew: true,
+
       stock: 0,
       image: "/ix.webp",
       sales: 33,
@@ -82,7 +82,7 @@ const carsDataSeed = [
       type: "BMW i",
       fuelType: "ELECTRICO",
       price: "58600",
-      isNew: true,
+
       stock: 44,
       image: "/ix.webp",
       sales: 33,
@@ -91,7 +91,7 @@ const carsDataSeed = [
       model: "Nuevo BMW i4 M50",
       type: "BMW M",
       fuelType: "ELECTRICO",
-      isNew: true,
+
       stock: 89,
       image: "/ix.webp",
       sales: 33,
@@ -110,7 +110,7 @@ const carsDataSeed = [
       type: "BMW i",
       fuelType: "ELECTRICO",
       price: "58200",
-      isNew: true,
+
       stock: 70,
       image: "/ix.webp",
       sales: 33,
@@ -129,7 +129,7 @@ const carsDataSeed = [
       type: "BMW M",
       fuelType: "HIBRIDO ENCHUFABLE",
       price: "201700",
-      isNew: true,
+
       stock: 5,
       image: "/ix.webp",
       sales: 33,

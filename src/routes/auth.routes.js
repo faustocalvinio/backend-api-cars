@@ -15,9 +15,9 @@ router.post("/seed", [], seedAdmins);
 router.post(
    "/new-admin",
    [
-      check("name", "El nombre es obligatorio").not().isEmpty(),
-      check("email", "El email es obligatorio").isEmail(),
-      check("password", "El password debe ser de 6 caracteres").isLength({
+      check("name", "The name is required.").not().isEmpty(),
+      check("email", "The email is required.").isEmail(),
+      check("password", "The password must be 6 characters long.").isLength({
          min: 6,
       }),
       validateFields,
@@ -28,8 +28,8 @@ router.post(
 router.post(
    "/login",
    [
-      check("email", "El email es obligatorio").isEmail(),
-      check("password", "El password debe ser de 6 caracteres").isLength({
+      check("email", "The email is required.").isEmail(),
+      check("password", "The password must be 6 characters long.").isLength({
          min: 6,
       }),
       validateFields,

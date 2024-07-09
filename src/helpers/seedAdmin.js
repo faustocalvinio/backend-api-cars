@@ -20,7 +20,7 @@ const seedAdmins = async (req, res) => {
       console.log("Seed Admins ejecutado");
       return res.json({
          ok: true,
-         msg: "Admins añadidos correctamente",
+         message: "Admins añadidos correctamente",
       });
    } catch (err) {
       console.error("Error al añadir administradores:", err);

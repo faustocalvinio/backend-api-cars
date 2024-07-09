@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 app.get("/api/test", (req, res) => {
    res.json({
       ok: true,
-      msg: `La API funciona bien`,
+      message: "La API funciona bien",
    });
 });
 

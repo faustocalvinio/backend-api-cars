@@ -6,7 +6,7 @@ const validateJWT = (req, res = response, next) => {
    if (!token) {
       return res.status(401).json({
          ok: false,
-         msg: "No hay token en los headers de la peticion",
+         message: "No hay token en los headers de la peticion",
       });
    }
    try {
@@ -17,7 +17,7 @@ const validateJWT = (req, res = response, next) => {
    } catch (error) {
       return res.status(401).json({
          ok: false,
-         msg: "El token no es valido",
+         message: "El token no es valido",
       });
    }
    next();

@@ -2,7 +2,6 @@ const { response } = require("express");
 const bcryptjs = require("bcryptjs");
 const Admin = require("../../models/Admin.model");
 const { generateJWT } = require("../../helpers/generateJWT");
-// !!!const { generateJWT } = require('../helpers/jwt');
 
 const createAdmin = async (req, res = response) => {
    const { email, password } = req.body;
@@ -12,7 +11,7 @@ const createAdmin = async (req, res = response) => {
       if (admin) {
          return res.status(400).json({
             ok: false,
-            msg: "El admin ya existe con ese email",
+            message: "Email already registered",
          });
       }
 
@@ -22,19 +21,16 @@ const createAdmin = async (req, res = response) => {
 
       await admin.save();
 
-      // !const token = await generateJWT( admin.id, admin.name );
-
       res.status(201).json({
          ok: true,
          uid: admin.id,
          name: admin.name,
-         //  token,
       });
    } catch (error) {
       console.log(error);
       res.status(500).json({
          ok: false,
-         msg: "Error inesperado, hable con el administrador",
+         message: "Unexpected error",
       });
    }
 };
@@ -48,7 +44,7 @@ const loginUser = async (req, res = response) => {
       if (!user) {
          return res.status(400).json({
             ok: false,
-            msg: "El user no existe con ese email",
+            message: "User not found",
          });
       }
 
@@ -57,7 +53,7 @@ const loginUser = async (req, res = response) => {
       if (!validPassword) {
          return res.status(400).json({
             ok: false,
-            msg: "El password es incorrecto",
+            message: "Wrong password",
          });
       }
       // ?GENERAR TOKEN DE AUTH
@@ -73,7 +69,7 @@ const loginUser = async (req, res = response) => {
       console.log(error);
       res.status(500).json({
          ok: false,
-         msg: "Error inesperado, hable con el administrador",
+         message: "Unexpected error",
       });
    }
 };

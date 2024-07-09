@@ -18,10 +18,6 @@ const CarSchema = new Schema({
       required: false,
       default: 1000,
    },
-   isNew: {
-      type: Boolean,
-      default: false,
-   },
    stock: {
       type: Number,
       default: 1,
