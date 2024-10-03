@@ -1,7 +1,3 @@
-Of course! Here is the formatted README in Markdown:
-
----
-
 # Car Sale API
 
 ## Project Overview
@@ -83,9 +79,3 @@ The API provides the following endpoints:
 - `GET /api/cars/:id`: Get details of a specific car
 - `PUT /api/cars/:id`: Update a car's information
 - `DELETE /api/cars/:id`: Delete a car
-
-## License
-
-This project is licensed under the MIT License.
-
----
