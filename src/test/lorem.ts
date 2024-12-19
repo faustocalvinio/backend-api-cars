@@ -1,0 +1,1 @@
+export const log2:string = "AAA"
