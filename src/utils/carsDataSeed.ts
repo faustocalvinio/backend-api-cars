@@ -1,4 +1,6 @@
-const carsDataSeed = [
+import { SeedCar } from "../interfaces/car.interfaces";
+
+export const carsDataSeed: SeedCar[] = [
    {
       model: "BMW iX",
       type: "BMW i",
@@ -88,15 +90,6 @@ const carsDataSeed = [
       sales: 33,
    },
    {
-      model: "Nuevo BMW i4 M50",
-      type: "BMW M",
-      fuelType: "ELECTRICO",
-
-      stock: 89,
-      image: "/ix.webp",
-      sales: 33,
-   },
-   {
       model: "BMW iX3",
       type: "BMW i",
       fuelType: "ELECTRICO",
@@ -135,5 +128,3 @@ const carsDataSeed = [
       sales: 33,
    },
 ];
-
-module.exports = { carsDataSeed };
