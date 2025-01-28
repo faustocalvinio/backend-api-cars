@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.use("/api/cars", carRouter);
 app.use("/api/auth", authRouter);
 
-app.listen(process.env.ENV_PORT, () => {
+app.listen(process.env.ENV_PORT || 3000, () => {
     console.log(
         `Servidor corriendo en el puerto localhost:${process.env.ENV_PORT}`
     );
