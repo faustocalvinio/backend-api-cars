@@ -43,10 +43,10 @@ export const createAdmin = async (req: Request, res: Response): Promise<void> =>
 
 export const loginUser = async (req: Request, res: Response): Promise<void> => {
     const { email, password } = req.body;
-
+    console.log({ email, password })
     try {
         const user = await Admin.findOne({ email });
-
+        console.log(password)
         if (!user) {
             res.status(400).json({
                 ok: false,
@@ -56,7 +56,8 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
         }
 
         const validPassword = bcryptjs.compareSync(password, user.password);
-
+        console.log(user.password)
+        console.log({ validPassword })
         if (!validPassword) {
             res.status(400).json({
                 ok: false,
