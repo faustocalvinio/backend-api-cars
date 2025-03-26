@@ -11,6 +11,15 @@ export const carsDataSeed: SeedCar[] = [
       sales: 33,
    },
    {
+      model: "AUDI RS5",
+      type: "AUDI RS",
+      fuelType: "HIBRIDO",
+      price: "98765",
+      stock: 220,
+      image: "/ix.webp",
+      sales: 20,
+   },
+   {
       model: "BMW iX M60",
       type: "BMW M",
       fuelType: "ELECTRICO",
