@@ -7,3 +7,7 @@ export interface SeedCar {
    image: string;
    sales: number;
 }
+export interface ReqWithToken extends Request {
+   uid?: string;
+   name?: string;
+}
