@@ -80,7 +80,8 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
 };
 
 export const renewToken = async (
-   req: ReqWithToken,
+   // ! Request with token? ????
+   req: any,
    res: Response
 ): Promise<void> => {
    const { uid, name } = req;

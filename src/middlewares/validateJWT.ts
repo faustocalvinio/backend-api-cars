@@ -12,6 +12,7 @@ export const validateJWT = (
          ok: false,
          message: "No hay token en los headers de la peticion",
       });
+      return;
    }
    try {
       jwt.verify(token!, process.env.ENV_JWT_SECRET_PRIVATE_KEY || "");
@@ -20,6 +21,7 @@ export const validateJWT = (
          ok: false,
          message: "El token no es valido",
       });
+      return;
    }
    next();
 };

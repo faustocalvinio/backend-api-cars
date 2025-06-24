@@ -49,7 +49,3 @@ npm start
 | POST   | /api/cars      | Create a new car    |
 | PUT    | /api/cars/:id  | Update a car        |
 | DELETE | /api/cars/:id  | Delete a car        |
-
-## License
-
-MIT

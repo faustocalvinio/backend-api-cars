@@ -9,6 +9,10 @@ const CarSchema = new Schema({
       type: String,
       required: true,
    },
+   brand: {
+      type: String,
+      required: true,
+   },
    fuelType: {
       type: String,
       required: true,
@@ -23,6 +27,10 @@ const CarSchema = new Schema({
       default: 1,
    },
    image: {
+      type: String,
+      required: false,
+   },
+   portraitImage: {
       type: String,
       required: false,
    },
